@@ -1,4 +1,4 @@
-(ns sql-query.core
+(ns sql-compose.core
   (:require [clojure.string :as string]
             [clojure.test :refer [function?]]))
 

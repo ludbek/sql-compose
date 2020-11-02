@@ -1,6 +1,6 @@
-(ns sql-query.core-test
+(ns sql-compose.core-test
   (:require [clojure.test :refer :all]
-            [sql-query.core :refer [sql where AND OR insert-into set-values]]))
+            [sql-compose.core :refer [sql where AND OR insert-into set-values]]))
 
 (deftest sql-test
   (testing "it works"

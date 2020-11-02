@@ -1,22 +1,22 @@
-# sql-query
+# sql-compose
 
 ```
-sql-query "0.1.0"
+sql-compose "0.1.0"
 ```
 
 ## Why yet another query generator?
 
 Composing a sql query does not need to be complex.
-`sql-query` has single abstraction, thats it.
+`sql-compose` has single abstraction, thats it.
 
-The idea behind `sql-query` is to replace dynamic parts of
-the queries with functions. While working with `sql-query`
+The idea behind `sql-compose` is to replace dynamic parts of
+the queries with functions. While working with `sql-compose`
 we mostly write plain sql statements.
 
-## An example of using sql-query
+## An example of using sql-compose
 
 ```clojure
-(require '[sql-query.core :refer [sql where]])
+(require '[sql-compose.core :refer [sql where]])
 
 (sql "SELECT * FROM users"
      "INNER JOIN sessions ON sessions.user_id = users.id"
@@ -47,13 +47,13 @@ when we need to.
 
 We will call these dynamic parts `fillers`.
 
-`sql-query` packs some common `fillers`.
+`sql-compose` packs some common `fillers`.
 
 ### where
 When a map is passed to `where`, it uses `and`.
 
 ```clojure
-=> (require '[sql-query.core :refer [sql where]])
+=> (require '[sql-compose.core :refer [sql where]])
 
 => (sql "SELECT * FROM users"
      (where {:id 1 :active true}))
@@ -64,7 +64,7 @@ When a map is passed to `where`, it uses `and`.
 For complex logics we can use `AND` and `OR` fillers.
 
 ```clojure
-=> (require '[sql-query.core :refer [sql where AND OR]])
+=> (require '[sql-compose.core :refer [sql where AND OR]])
 
 => (sql "SELECT * FROM users"
         (where (AND ["id =" 1]
@@ -79,7 +79,7 @@ For complex logics we can use `AND` and `OR` fillers.
 
 #### Insert single data
 ```clojure
-=> (require '[sql-query.core :refer [sql insert-into]])
+=> (require '[sql-compose.core :refer [sql insert-into]])
 
 => (sql (insert-into :users {:email "someone@example.com" :city "kathmandu" }))
 
@@ -88,7 +88,7 @@ For complex logics we can use `AND` and `OR` fillers.
 
 #### Insert multiple data
 ```clojure
-=> (require '[sql-query.core :refer [sql insert-into]])
+=> (require '[sql-compose.core :refer [sql insert-into]])
 
 => (sql (insert-into :users [{:email "someone@example.com" :city "kathmandu" }
                              {:email "anotherone@example.com" :city "sydney"}]))
@@ -100,7 +100,7 @@ For complex logics we can use `AND` and `OR` fillers.
 `set-values` is a filler for updating rows.
 
 ```clojure
-=> (require '[sql-query.core :refer [sql set-values where]])
+=> (require '[sql-compose.core :refer [sql set-values where]])
 
 => (sql "UPDATE users"
         (set-values {:email "someone@example.com"})
