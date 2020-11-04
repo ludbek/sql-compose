@@ -1,8 +1,5 @@
 # sql-compose
-
-```
-sql-compose "0.1.0"
-```
+[![Clojars Project](https://img.shields.io/clojars/v/sql-compose.svg)](https://clojars.org/sql-compose)
 
 ## Why yet another query generator?
 
