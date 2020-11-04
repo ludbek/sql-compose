@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>sql-compose</groupId>
+  <artifactId>sql-compose</artifactId>
+  <version>0.1.1</version>
+  <name>sql-compose</name>
+  <dependencies>
+    <dependency>
+      <groupId>org.clojure</groupId>
+      <artifactId>clojure</artifactId>
+      <version>1.9.0</version>
+    </dependency>
+  </dependencies>
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <resources>
+      <resource>
+        <directory>src</directory>
+      </resource>
+    </resources>
+  </build>
+  <repositories>
+    <repository>
+      <id>clojars</id>
+      <url>https://repo.clojars.org/</url>
+    </repository>
+  </repositories>
+  <distributionManagement>
+    <repository>
+      <id>clojars</id>
+      <name>Clojars repository</name>
+      <url>https://clojars.org/repo</url>
+    </repository>
+  </distributionManagement>
+
+  <description>A simple sql query composer for clojure.</description>
+  <url>https://github.com/ludbek/sql-compose</url>
+  <licenses>
+    <license>
+      <name>Eclipse Public License, v. 2.0</name>
+      <url>http://www.eclipse.org/legal/epl-2.0</url>
+    </license>
+  </licenses>
+  <scm>
+    <url>https://github.com/ludbek/sql-compose</url>
+  </scm>
+</project>
